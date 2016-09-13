@@ -1,0 +1,69 @@
+@import "~m-base/base/mixins";
+@import "~m-base/base/variables";
+
+@switch-height: 30px;
+@switch-width: 50px;
+
+.switch {
+    display: inline-block;
+    input {
+        position: absolute;
+        max-height: 0;
+        max-width: 0;
+        opacity: 0;
+    }
+
+    input + div {
+        display: block;
+        position: relative;
+        box-shadow: inset 0 0 1px 1px @N2_1;
+        text-indent: -5000px;
+        height: @switch-height;
+        width: @switch-width;
+        border-radius: @switch-height/2;
+    }
+
+    input[disabled] + div {
+        background: @N2_1;
+    }
+    input + div:before {
+        content: "";
+        position: absolute;
+        display: block;
+        height: @switch-height;
+        width: @switch-height;
+        top: 0;
+        left: 0;
+        border-radius: @switch-height/2;
+        //background: rgba(19, 191, 17, 0);
+        -moz-transition: .25s ease-in-out;
+        -webkit-transition: .25s ease-in-out;
+        transition: .25s ease-in-out;
+    }
+
+    input + div:after {
+        content: "";
+        position: absolute;
+        display: block;
+        height: @switch-height;
+        width: @switch-height;
+        top: 0;
+        left: 0px;
+        border-radius: @switch-height/2;
+        background: white;
+        box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .2), 0 2px 4px rgba(0, 0, 0, .2);
+        -moz-transition: .25s ease-in-out;
+        -webkit-transition: .25s ease-in-out;
+        transition: .25s ease-in-out;
+    }
+    input:checked + div:before {
+        width: @switch-width;
+        background: @F3_1;
+    }
+
+    input:checked + div:after {
+        left: @switch-width - @switch-height;
+        box-shadow: inset 0 0 0 1px rgba(19, 191, 17, 1), 0 2px 4px rgba(0, 0, 0, .2);
+    }
+}
+
