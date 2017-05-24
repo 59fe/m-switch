@@ -1,6 +1,6 @@
 {
   "name": "m-switch",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "m-switch 开关选择器",
   "main": "index.js",
   "scripts": {
@@ -26,7 +26,7 @@
   },
   "readmeFilename": "README.md",
   "dependencies": {
-    "react": "~15.2.0",
+    "react": "~15.5.4",
     "m-base": "^1.0.0"
   },
   "keywords": [
